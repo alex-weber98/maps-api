@@ -8,7 +8,7 @@ const weatherIcon = document.getElementById("weather-icon");
 
 
 function UpdateWeatherData(lat, lng){
-    $.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
+    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
 
         //`http://api.openweathermap.org/data/2.5/weather?q=${"Bischofshofen"}&APPID=${key}&units=metric
         temp.innerHTML = json.main.temp;
@@ -19,7 +19,7 @@ function UpdateWeatherData(lat, lng){
 
         
         var iconCode = json.weather[0].icon;
-        var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+        var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
         weatherIcon.src = iconUrl;
 
 
