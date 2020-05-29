@@ -9,7 +9,7 @@ function init(){
         query: locationInput.value,
         fields: ['name', 'geometry'],
     };
-    PlaceFinder(request, placeUpdater);
+    PlaceFinder(request, placeUpdaterFromLocation);
 }
 
 
@@ -20,12 +20,12 @@ locationInput.addEventListener('keypress', function(){
             query: locationInput.value,
             fields: ['name', 'geometry'],
         };
-        PlaceFinder(request, placeUpdater);
+        PlaceFinder(request, placeUpdaterFromLocation);
     }
 });
 
 
-function placeUpdater(results, status){
+function placeUpdaterFromLocation(results, status){
     const location = results[0].geometry.location;
 
     deleteMarkers();
@@ -35,20 +35,33 @@ function placeUpdater(results, status){
 }
 
 
+function placeUpdaterFromMaps(result, status){
+
+    console.log(result);
+
+    if(typeof result.address.village !== "undefined"){
+        locationInput.value = result.address.village;
+
+    } else if (typeof result.address.town !== "undefined"){
+        locationInput.value = result.address.town;
+
+    } else if(typeof result.address.city !== "undefined"){
+        locationInput.value = result.address.city;
+    
+    }else{
+        locationInput.value = result.address.state;;
+
+    }
+    
+    UpdateWeatherData(result.lat, result.lon);
+
+}
+
+
 function newLocation(mapsMouseEvent){
     var myLatlng;
 
-    var infoWindow = new google.maps.InfoWindow(
-        {content: 'Click the map to get Lat/Lng!', position: myLatlng});
-    infoWindow.open(map);
-    
+    createMarker(mapsMouseEvent.latLng);
 
-
-    // Close the current InfoWindow.
-     infoWindow.close();
-
-     // Create a new InfoWindow.
-     infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
-     infoWindow.setContent(mapsMouseEvent.latLng.toString());
-     infoWindow.open(map);
+    var result = reverseGeo(mapsMouseEvent.latLng.lat(), mapsMouseEvent.latLng.lng(), placeUpdaterFromMaps)  
 }
