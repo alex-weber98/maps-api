@@ -22,7 +22,7 @@ function UpdateWeatherData(lat, lng){
         var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
         weatherIcon.src = iconUrl;
 
-
+        ///
     });
 
 }
