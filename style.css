@@ -8,7 +8,7 @@
 
 
 body {
-    height: 100%;
+
     margin: 0;
     padding: 0;
     text-align: center;
@@ -16,18 +16,20 @@ body {
 
 
 html{
+    /*
     background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
+    */
+    background: #8ebad3;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    overflow: hidden;
 }
 
 
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;   
-    grid-auto-rows:minmax(100px, auto);
+    grid-template-columns: 1fr 0.6fr 1fr;   
+    grid-auto-rows:minmax(5%, auto);
     
     grid-gap:1em;
     justify-items:stretch;
@@ -35,16 +37,23 @@ html{
     box-sizing: border-box;
     text-align: center;
     align-content: center;
+
+}
+
+#week-info{
+    
 }
 
 
+
+
 #map {
-    height: 100%;
+
     min-width: 300px;
     grid-column: 1;
     grid-row: 3/4;
-    margin: 0px 40px 200px 80px;
-    border-color: white 2px solid;
+    margin: 50px;
+    border-color: white 1px solid;
     border-radius: 20px;
     box-shadow: 0 0 10px white;
 }
@@ -56,7 +65,7 @@ header{
     font-size: 40px;
     margin: 20px 0px;
     padding: 25px;
-    grid-column: 2;
+    grid-column: 1/4;
     grid-row: 1;
 
 }
@@ -67,7 +76,7 @@ h1{
 
 #locdiv{
     text-align: center;
-    grid-column: 2;
+    grid-column: 1/4;
     grid-row: 2;
 
 }
@@ -100,6 +109,20 @@ h1{
     box-shadow: 0 0 10px white ;
     background-color: rgb(151, 143, 143, 0.25);
     resize: both;
+}
+
+
+#week-info{
+    grid-column: 3;
+    grid-row: 3;
+    margin: 50px;
+    text-align: left;
+    padding: 50px;
+
+    border: solid white 1px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px white ;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 
@@ -162,4 +185,55 @@ footer{
   font-family: 'Roboto','sans-serif';
 }
 
+*/
+
+
+@media(max-width: 1500px){
+    
+
+
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 0.6fr;   
+        grid-auto-rows:minmax(5%, auto);
+
+        grid-gap:1em;
+        justify-items:stretch;
+        align-items:stretch;
+        box-sizing: border-box;
+        text-align: center;
+        align-content: center;
+
+    }
+
+    #week-info{
+        grid-column: 1/3;
+        grid-row: 4;
+        margin: auto;
+        margin-top: 0px;
+        text-align: center;
+        /*
+        width: 60%;
+        height: 400px;
+        */
+    }
+
+    #info{
+        position: relative;
+        margin: 50px 40px 50px 0px;
+    }
+
+ 
+
+}
+
+/*
+@media(min-width: 1500px){
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 0.6fr 1fr;   
+        grid-auto-rows:minmax(5%, auto);
+    }
+}
 */

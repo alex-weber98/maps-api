@@ -41,11 +41,6 @@
             </div>
 
             <div>
-                <h3>Feels like</h3>
-                <h2 id="feels-like"></h2>
-            </div>
-
-            <div>
                 <h3>Humitity</h3>
                 <h2 id="hum"></h2>
             </div>
@@ -57,17 +52,27 @@
           </div>
     
         </div>
+
+        <div id="week-info">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
+
+
     </div>
 
     <footer>
       
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
     <script src="map.js"></script>
     <script src="markers.js"></script>
     <script src="weather.js"></script>
     <script src="main.js"></script>
     <script src="geocoding.js"></script>
+    <script src="chart.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KarHYJjEhoeLXJ_U3Eucjh3pSsYE1rk&libraries=places&callback=init" async defer></script>
 
