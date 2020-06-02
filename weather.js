@@ -37,7 +37,12 @@ function UpdateWeatherData(lat, lng){
             dataMin.push(json.daily[i].temp.min);
             dataMax.push(json.daily[i].temp.max);
             //dataDay.push(json.daily[i].temp.day)
-            labels.push(getDay(getDate(i - 1)));
+            if(i < 1){
+                labels.push("Today")
+            }
+            else{
+                labels.push(getDay(getDate(i - 1)));
+            }
         }
     
         UpdateChart("myChart", labels, dataMin, dataMax)
