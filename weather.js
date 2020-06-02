@@ -11,8 +11,7 @@ function UpdateWeatherData(lat, lng){
     $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
 
         //`http://api.openweathermap.org/data/2.5/weather?q=${"Bischofshofen"}&APPID=${key}&units=metric
-        temp.innerHTML = json.main.temp;
-        feelsLike.innerHTML = json.main.feels_like;
+        temp.innerHTML = Math.round(json.main.temp) + " °C";
         weather.innerHTML =  json.weather[0].main;
         humitity.innerHTML = json.main.humidity + "%";
         //locationInput.value = json.name;
