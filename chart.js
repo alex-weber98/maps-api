@@ -24,25 +24,87 @@ function UpdateChart(chartId, labels, dataMin, dataMax){
             }
           ]
         },
+        options: options1
+        /*
         options: {
           title: {
             display: true,
             text: 'Next 7 Days'
           }
         }
+        */
       });
 
       //ctx.addEventListener("beforeprint", beforePrintHandler());
-      ctx.onbeforepirnt = beforePrintHandler(myChart);
+      //ctx.onresize = beforePrintHandler(myChart);
 
 }
 
+
+var option = {
+  maintainAspectRatio: false,
+  responsive: false,
+
+  scales: {
+    yAxes: [{
+      stacked: true,
+      gridLines: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    }],
+    xAxes: [{
+      gridLines: {
+        display: false
+      }
+    }]
+  }
+};
+
+
+var options1 = {
+  maintainAspectRatio: false,
+  responsive: true,
+  legend: {
+      position: 'top'
+  },
+  title: {
+      position: 'bottom',
+      display: true,
+      text:'7 days '
+  },
+  tooltips: {
+      mode: 'index',
+      intersect: false,
+  },
+  hover: {
+      mode: 'nearest',
+      intersect: true
+  },
+  scales: {
+      xAxes: [{
+          display: true,
+          scaleLabel: {
+              display: true,
+              labelString: 'Day'
+          }
+      }],
+      yAxes: [{
+          display: true,
+          scaleLabel: {
+              display: true,
+              labelString: '°C'
+          }
+      }]
+  }
+};
+/*
 function beforePrintHandler (Chart) {
   for (var id in Chart.instances) {
       Chart.instances[id].resize();
   }
 }
-
+*/
 
 
 function removeData(chart) {
@@ -56,32 +118,5 @@ function removeData(chart) {
 
 }
 
-/*
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx,  {
-        type: 'line',
-        data: {
-          labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-          datasets: [{ 
-              data: [86,114,106,106,107,111,133,221,783,2478],
-              label: "Min",
-              borderColor: "#3e95cd",
-              fill: false
-            }, { 
-              data: [282,350,411,502,635,809,947,1402,3700,5267],
-              label: "Max",
-              borderColor: "#8e5ea2",
-              fill: false
-            }
-          ]
-        },
-        options: {
-          title: {
-            display: true,
-            text: 'Next 7 Days'
-          }
-        }
-      });
 
-*/

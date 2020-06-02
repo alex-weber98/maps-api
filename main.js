@@ -65,3 +65,7 @@ function newLocation(mapsMouseEvent){
 
     var result = reverseGeo(mapsMouseEvent.latLng.lat(), mapsMouseEvent.latLng.lng(), placeUpdaterFromMaps)  
 }
+
+window.addEventListener('load', function () {
+    
+  })

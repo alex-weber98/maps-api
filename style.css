@@ -8,9 +8,11 @@
 
 
 body {
-
+    
     padding: 0;
     text-align: center;
+    margin-top: 20px;
+    margin: 30px 100px 100px 100px;
 }
 
 
@@ -28,16 +30,17 @@ html{
 .wrapper{
     display: grid;
     grid-template-columns: 1fr 500px 1fr;   
-    grid-auto-rows:minmax(5%, auto);
+    grid-auto-rows:minmax(0%, auto);
     
-    grid-gap:1em;
-    /*
     justify-items:stretch;
     align-items:stretch;
-    */
-    box-sizing: border-box;
+    display: flexbox;
+ 
+    box-sizing: border-box;   
     text-align: center;
     align-content: center;
+
+
 
 }
 .wrapper:after {
@@ -54,7 +57,7 @@ html{
     min-width: 300px;
     grid-column: 1;
     grid-row: 3/4;
-    margin: 50px;
+    /*margin: 50px;*/
     border-color: white 1px solid;
     border-radius: 20px;
     box-shadow: 0 0 10px white;
@@ -63,18 +66,34 @@ html{
 
 
 header{
+
+    width: 80vw;
     text-align: center;
     font-size: 40px;
-    margin: 20px 0px;
+
+    margin: auto;
+
     padding: 25px;
     grid-column: 1/4;
     grid-row: 1;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px white;
+    background-color: rgb(151, 143, 143, 0.2);
 
 }
 
 h1{
     text-shadow: 10px 10px 40px rgb(151, 143, 143, 0.2);
+    margin-bottom: 20px;
 }
+
+#info, .isResizable, #map{
+    margin: 20px;
+    padding: 50px;
+}
+
+
 
 #locdiv{
     text-align: center;
@@ -100,24 +119,21 @@ h1{
 
 
 #info{
-    margin-top: 100px;
     text-align: center;
     grid-column: 2;
     grid-row: 3;
-    margin: 50px;
-    padding: 60px 90px;
     border: solid white 1px;
     border-radius: 20px;
     box-shadow: 0 0 10px white ;
     background-color: rgb(151, 143, 143, 0.25);
     resize: both;
+
 }
 
-
-#week-info{
+.isResizable{
     grid-column: 3;
     grid-row: 3;
-    margin: 50px;
+    /*margin: 50px;*/
     text-align: center;
     padding: 50px;
 
@@ -126,11 +142,19 @@ h1{
     box-shadow: 0 0 10px white ;
     background-color: rgba(255, 255, 255, 0.25);
     resize: both;
+    overflow: hidden;
+}
+
+#week-info{
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 #myChart{
     position: relative;
     width: 100%;
+    resize: both;
 }
 
 h2{
@@ -162,17 +186,44 @@ h3{
 
 }
 
-footer{
-    margin: 50px;
+footer{  
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgb(151, 143, 143, 1.0);
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 100px;   
+    border-top: 2px solid white;
+    box-shadow: 0 0 10px white ;
+    left: 0px;
 }
+
+#copyright{
+    margin-right: 30px;
+    text-align: right;
+}
+
+#copyrightText{
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+    text-shadow: none;
+}
+
 
 
 @media(max-width: 1500px){
     
     .wrapper{
         display: grid;
-        grid-template-columns: 1fr 0.6fr;   
-        grid-auto-rows:minmax(5%, auto);
+        grid-template-columns: 1fr 1fr;   
+        grid-auto-rows:minmax(0%, auto);
 
         grid-gap:1em;
         justify-items:stretch;
@@ -183,21 +234,15 @@ footer{
 
     }
 
-    #week-info{
+    .isResizable{
         grid-column: 1/3;
         grid-row: 4;
         margin: auto;
         margin-top: 0px;
         text-align: center;
-        /*
-        width: 60%;
-        height: 400px;
-        */
-    }
+        width: 50%;
 
-    #info{
-        position: relative;
-        margin: 50px 40px 50px 0px;
+
     }
 
  

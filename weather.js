@@ -7,8 +7,10 @@ const humitity = document.getElementById("hum");
 const weatherIcon = document.getElementById("weather-icon");
 
 
-function UpdateWeatherData(lat, lng){
-    $.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
+
+async function UpdateWeatherData(lat, lng){
+    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
+
 
         //`http://api.openweathermap.org/data/2.5/weather?q=${"Bischofshofen"}&APPID=${key}&units=metric
         temp.innerHTML = Math.round(json.main.temp) + " °C";
@@ -44,7 +46,6 @@ function UpdateWeatherData(lat, lng){
                 labels.push(getDay(getDate(i - 1)));
             }
         }
-    
         UpdateChart("myChart", labels, dataMin, dataMax)
      
 
