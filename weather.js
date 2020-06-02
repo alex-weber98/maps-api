@@ -9,7 +9,7 @@ const weatherIcon = document.getElementById("weather-icon");
 
 
 async function UpdateWeatherData(lat, lng){
-    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
+    $.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`,function(json){
 
 
         //`http://api.openweathermap.org/data/2.5/weather?q=${"Bischofshofen"}&APPID=${key}&units=metric
