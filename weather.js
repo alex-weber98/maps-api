@@ -30,20 +30,78 @@ function UpdateWeatherData(lat, lng){
         var labels = [];
         var dataMin = [];
         var dataMax = [];
+        //var dataDay = [];
 
 
         for(i = 0; i < json.daily.length; i++){
             dataMin.push(json.daily[i].temp.min);
             dataMax.push(json.daily[i].temp.max);
-            labels.push(i);
+            //dataDay.push(json.daily[i].temp.day)
+            labels.push(getDay(getDate(i - 1)));
         }
     
         UpdateChart("myChart", labels, dataMin, dataMax)
+        //UpdateChart("myChart", labels, dataDay)
 
     });
 
-
-
 }
+
+function getDate(i){
+
+    var date = new Date();
+    date.setDate(new Date().getDate() + i)
+    var dd = String(date.getDate()).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = date.getFullYear();
+    
+    dateString = dd + '/' + mm + '/' +  yyyy;
+
+
+    return date;
+}
+
+
+function getDay(date){
+    var day = parseInt(date.getDay());
+    var result;
+
+    switch(day){
+        case 0:
+            result = "Monday";
+            break;
+
+        case 1:
+            result = "Tuesday";
+            break;
+
+        case 2:
+            result = "Wednesday";
+            break;
+
+        case 3:
+            result = "Thursday";
+            break;
+
+        case 4:
+            result = "Friday";
+            break;
+
+        case 5:
+            result = "Saturday";
+            break;
+
+        case 6:
+            result = "Sunday";
+            break;
+
+        default:
+            result = "";      
+            break;    
+    }
+
+    return result;
+}
+
 
 

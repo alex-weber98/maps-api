@@ -4,7 +4,9 @@ function UpdateChart(chartId, labels, dataMin, dataMax){
     
     var ctx = document.getElementById(chartId).getContext('2d');
    
-    removeData(myChart);
+    if (myChart) {
+      myChart.destroy();
+    }
     myChart = new Chart(ctx,  {
         type: 'line',
         data: {
@@ -30,6 +32,15 @@ function UpdateChart(chartId, labels, dataMin, dataMax){
         }
       });
 
+      //ctx.addEventListener("beforeprint", beforePrintHandler());
+      ctx.onbeforepirnt = beforePrintHandler(myChart);
+
+}
+
+function beforePrintHandler (Chart) {
+  for (var id in Chart.instances) {
+      Chart.instances[id].resize();
+  }
 }
 
 
