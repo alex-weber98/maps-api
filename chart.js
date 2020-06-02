@@ -24,45 +24,14 @@ function UpdateChart(chartId, labels, dataMin, dataMax){
             }
           ]
         },
-        options: options1
-        /*
-        options: {
-          title: {
-            display: true,
-            text: 'Next 7 Days'
-          }
-        }
-        */
+        options: option
+
       });
-
-      //ctx.addEventListener("beforeprint", beforePrintHandler());
-      //ctx.onresize = beforePrintHandler(myChart);
-
 }
 
 
+
 var option = {
-  maintainAspectRatio: false,
-  responsive: false,
-
-  scales: {
-    yAxes: [{
-      stacked: true,
-      gridLines: {
-        display: true,
-        color: "rgba(255,99,132,0.2)"
-      }
-    }],
-    xAxes: [{
-      gridLines: {
-        display: false
-      }
-    }]
-  }
-};
-
-
-var options1 = {
   maintainAspectRatio: false,
   responsive: true,
   legend: {
@@ -98,25 +67,3 @@ var options1 = {
       }]
   }
 };
-/*
-function beforePrintHandler (Chart) {
-  for (var id in Chart.instances) {
-      Chart.instances[id].resize();
-  }
-}
-*/
-
-
-function removeData(chart) {
-    if(myChart != null){
-        chart.data.labels.pop();
-        chart.data.datasets.forEach((dataset) => {
-            dataset.data.pop();
-        });
-        chart.update();
-    }
-
-}
-
-
-
