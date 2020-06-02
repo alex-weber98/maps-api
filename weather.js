@@ -21,7 +21,7 @@ function UpdateWeatherData(lat, lng){
         var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
         weatherIcon.src = iconUrl;
 
-        ///
+
     });
 
 
@@ -30,15 +30,15 @@ function UpdateWeatherData(lat, lng){
         var labels = [];
         var dataMin = [];
         var dataMax = [];
-        //var dataDay = [];
+
 
 
         for(i = 0; i < json.daily.length; i++){
             dataMin.push(json.daily[i].temp.min);
             dataMax.push(json.daily[i].temp.max);
-            //dataDay.push(json.daily[i].temp.day)
+                    
             if(i < 1){
-                labels.push("Today")
+                labels.push("Today");
             }
             else{
                 labels.push(getDay(getDate(i - 1)));
@@ -46,7 +46,7 @@ function UpdateWeatherData(lat, lng){
         }
     
         UpdateChart("myChart", labels, dataMin, dataMax)
-        //UpdateChart("myChart", labels, dataDay)
+     
 
     });
 
