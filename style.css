@@ -13,6 +13,9 @@ body {
     text-align: center;
     margin-top: 20px;
     margin: 30px 5vw 10vw 5vw;
+    /*
+    overflow: hidden;
+    */
 }
 
 
@@ -23,13 +26,12 @@ html{
     background: #8ebad3;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
 }
 
 
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 500px 1fr;   
+    grid-template-columns: 1fr 400px 1fr;   
     grid-auto-rows:minmax(0%, auto);
     
     justify-items:stretch;
@@ -223,9 +225,16 @@ a{
 
 @media(max-width: 1500px){
     
+    h1{
+        font-size: 8vw;
+        margin-bottom: 30px;
+    
+    }
+
+
     .wrapper{
         display: grid;
-        grid-template-columns: 1fr 1fr;   
+        grid-template-columns: 1fr 400px;   
         grid-auto-rows:minmax(0%, auto);
 
         grid-gap:1em;
@@ -238,12 +247,17 @@ a{
     }
 
     .isResizable{
+        position: relative;
         grid-column: 1/3;
         grid-row: 4;
-        margin: auto;
+        margin: 50px;
         margin-top: 0px;
         text-align: center;
-        width: 50%;
+        width: calc(100%- 100px);
+    }
+
+    body{
+        overflow: auto;
     }
 }
 
@@ -253,9 +267,9 @@ a{
 
     }
     body{
-
-
+        overflow: auto;
     }
+
     header{
         font-size: 3vw;
         margin: auto;
