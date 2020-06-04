@@ -7,18 +7,6 @@
 }
 
 
-body {
-    
-    padding: 0;
-    text-align: center;
-    margin-top: 20px;
-    margin: 30px 5vw 5vw 5vw;
-    /*
-    overflow: hidden;
-    */
-}
-
-
 html{
     /*
     background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
@@ -26,7 +14,50 @@ html{
     background: #8ebad3;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
+
+body {
+    height: 100%;
+    display: flexbox;
+    box-sizing: border-box;   
+    text-align: center;
+    align-content: center;
+}
+
+
+header{
+
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+
+    padding: 1vw;
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 10px white ;
+    margin-bottom: 2vw;
+    background-color: rgb(100, 92, 92);
+    color: white;
+}
+
+header > h1{
+    margin: 0px;
+}
+
+main{
+
+    padding: 0;
+    text-align: center;
+    
+    margin-top: 20px;
+    margin: 5vw 5vw 5vw 5vw; 
+
+}
+
+
+
+
+
 
 
 .wrapper{
@@ -37,17 +68,15 @@ html{
     justify-items:stretch;
     align-items:stretch;
     display: flexbox;
- 
     box-sizing: border-box;   
     text-align: center;
     align-content: center;
 }
-
 .wrapper:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
 
 
@@ -65,21 +94,6 @@ html{
 
 
 
-header{
-
-    width: 100%;
-    text-align: center;
-    font-size: 40px;
-
-    margin: auto;
-
-
-    grid-column: 1/4;
-    grid-row: 1;
-    border-bottom: 2px solid white;
-    margin-bottom: 3vw;
-
-}
 
 h1{
     text-shadow: 10px 10px 40px rgb(151, 143, 143, 0.2);
@@ -387,6 +401,10 @@ a{
     #info, .isResizable, #map{
         margin: 4vw;
         padding: 4vw;
+    }
+
+    #week-info{
+        min-height: 200px;
     }
 
 }
