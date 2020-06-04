@@ -32,12 +32,14 @@ async function UpdateWeatherData(lat, lng){
         var labels = [];
         var dataMin = [];
         var dataMax = [];
+        var des = []
 
         weatherIconsDiv.innerHTML = "";
 
         for(i = 0; i < json.daily.length; i++){
             dataMin.push(json.daily[i].temp.min);
             dataMax.push(json.daily[i].temp.max);
+            des.push(json.daily[i].weather[0].main);
                     
             if(i < 1){
                 labels.push("Today");
