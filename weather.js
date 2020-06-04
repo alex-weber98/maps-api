@@ -5,7 +5,7 @@ const feelsLike = document.getElementById("feels-like")
 const weather = document.getElementById("weather");
 const humitity = document.getElementById("hum");
 const weatherIcon = document.getElementById("weather-icon");
-
+const weatherIconsDiv = document.getElementById("weather-icons")
 
 
 async function UpdateWeatherData(lat, lng){
@@ -33,7 +33,7 @@ async function UpdateWeatherData(lat, lng){
         var dataMin = [];
         var dataMax = [];
 
-
+        weatherIconsDiv.innerHTML = "";
 
         for(i = 0; i < json.daily.length; i++){
             dataMin.push(json.daily[i].temp.min);
@@ -45,10 +45,16 @@ async function UpdateWeatherData(lat, lng){
             else{
                 labels.push(getDay(getDate(i - 1)));
             }
+            
+            var iconCode = json.daily[i].weather[0].icon;
+            var img = document.createElement("img");
+            img.className = "weather-icons-icon"
+            img.src = "https://openweathermap.org/img/w/" + iconCode + ".png";
+            weatherIconsDiv.appendChild(img);
+
         }
         UpdateChart("myChart", labels, dataMin, dataMax)
      
-
     });
 
 

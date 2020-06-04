@@ -67,7 +67,7 @@ var option = {
       position: 'top'
   },
   title: {
-      position: 'bottom',
+      position: 'top',
       display: true,
       text:'7 days '
   },
@@ -84,7 +84,7 @@ var option = {
           display: true,
           scaleLabel: {
               display: true,
-              labelString: 'Day'
+              labelString: ''
           }
       }],
       yAxes: [{

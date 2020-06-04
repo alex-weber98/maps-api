@@ -165,12 +165,14 @@ h3{
     resize: both;
     overflow: hidden;
     max-height: 600px;
+    display: flexbox;
 }
 
 #week-info{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 70%;
+    left: -20px;
 }
 
 #myChart{
@@ -191,6 +193,18 @@ h3{
     width: 150px;
     height: 150px;
     opacity: 75%;
+}
+
+#weather-icons{
+    position: relative;
+    display: inline-block;
+    top: -20px;
+    width: 100%;
+}
+
+.weather-icons-icon{
+    position: relative;
+    width: 12.5%;
 }
 
 footer{  
@@ -252,7 +266,6 @@ a{
         grid-row: 4;
         margin-top: 0px;
         text-align: center;
-        width: calc(100%- 100px);
     }
 /*
     #map {
