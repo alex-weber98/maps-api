@@ -1,5 +1,36 @@
 var myChart;
 
+
+/*
+var sun = new Image();
+sun.src = 'https://i.imgur.com/yDYW1I7.png';
+
+var cloud = new Image();
+cloud.src = 'https://i.imgur.com/DIbr9q1.png';
+
+Chart.pluginService.register({
+  afterUpdate: function(chart) {
+      chart.config.data.datasets[0]._meta[0].data[7]._model.pointStyle = sun;
+      chart.config.data.datasets[1]._meta[0].data[2]._model.pointStyle = cloud;
+  }
+});
+*/
+
+
+var sun = new Image();
+sun.src = 'https://i.imgur.com/yDYW1I7.png';
+
+var cloud = new Image();
+cloud.src = 'https://i.imgur.com/DIbr9q1.png';
+
+Chart.pluginService.register({
+  afterUpdate: function(chart) {
+      chart.options.legend.labels[0] = sun;
+      //chart.config.data.datasets[1]._meta[0].data[2]._model.pointStyle = cloud;
+  }
+});
+
+
 function UpdateChart(chartId, labels, dataMin, dataMax){
     
     var ctx = document.getElementById(chartId).getContext('2d');
@@ -28,8 +59,6 @@ function UpdateChart(chartId, labels, dataMin, dataMax){
 
       });
 }
-
-
 
 var option = {
   maintainAspectRatio: false,
@@ -67,3 +96,5 @@ var option = {
       }]
   }
 };
+
+

@@ -62,7 +62,6 @@ function MapUpdater(results, status){
 
 
 
-
 function query(request){
     
     

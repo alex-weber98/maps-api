@@ -51,6 +51,36 @@ async function UpdateWeatherData(lat, lng){
 
     });
 
+
+/*
+    $.getJSON(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&exclude=hourly,minutely&appid=a0e01a58965bfa8692262f34f8375f72&units=metric`,function(json){
+
+        var dailyData = json.daily;
+
+        var data = [];
+
+
+        for(i = 0; i < dailyData.length; i++){
+            var day = "";
+
+            if(i < 1){
+                day = "Today";
+            }
+            else{
+                day = getDay(getDate(i - 1));
+            }
+            
+            var oneDataSet = { label: day, y: [dailyData[i].temp.min, dailyData[i].temp.max], name: dailyData[i].weather[0].main }
+            data.push(oneDataSet)
+        }
+       
+        UpdateChartWithPics(data);
+        
+    });
+
+*/
+
+
 }
 
 function getDate(i){
