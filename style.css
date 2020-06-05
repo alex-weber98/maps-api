@@ -16,14 +16,14 @@
 html{
     /*
     background: #8ebad3;
-        background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
+    background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
     */
-
 
     background: url("img/cumulus-499176.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;;
     height: 100%;
 }
 
@@ -58,8 +58,7 @@ main{
     min-height: 100%;
     padding: 0;
     text-align: center;
-    
-    margin-top: 20px;
+    padding: 2vw;
     margin: 5vw 5vw 5vw 5vw; 
 
 }
@@ -183,7 +182,7 @@ h3{
     background-color: rgba(255, 255, 255, 0.25);
     resize: both;
     overflow: hidden;
-    max-height: 600px;
+    
     display: flexbox;
 }
 
@@ -225,25 +224,14 @@ h3{
     position: relative;
     width: 12.5%;
 }
-/*
-footer{  
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background-color: rgb(151, 143, 143, 1.0);
-    text-align: center;
-    margin-top: 50px;  
-    border-top: 2px solid white;
-    box-shadow: 0 0 10px white ;
-    left: 0px;
-}
-*/
+
 
 footer{  
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    margin-top: 50px;  
 
     text-align: center;
     background-color: rgb(151, 143, 143, 1.0);
@@ -269,6 +257,15 @@ footer{
     text-shadow: none;
 }
 
+@media(max-height: 1000px){
+    footer{  
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+}
 
 
 @media(max-width: 1500px){
