@@ -6,19 +6,29 @@
     text-shadow: 0 0 5px white;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 
 html{
     /*
-    background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
-    */
     background: #8ebad3;
+        background: url(https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_960_720.jpg);
+    */
+
+
+    background: url("img/cumulus-499176.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 100%;
 }
 
 body {
-    height: 100%;
+    min-height: 100%;
     display: flexbox;
     box-sizing: border-box;   
     text-align: center;
@@ -30,13 +40,13 @@ header{
 
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
 
     padding: 1vw;
     border-bottom: 2px solid white;
     box-shadow: 0 0 10px white ;
     margin-bottom: 2vw;
-    background-color: rgb(100, 92, 92);
+    background-color: rgb(151, 143, 143, 1.0);
     color: white;
 }
 
@@ -45,7 +55,7 @@ header > h1{
 }
 
 main{
-
+    min-height: 100%;
     padding: 0;
     text-align: center;
     
@@ -53,11 +63,6 @@ main{
     margin: 5vw 5vw 5vw 5vw; 
 
 }
-
-
-
-
-
 
 
 .wrapper{
@@ -160,7 +165,7 @@ h3{
     border: solid white 1px;
     border-radius: 20px;
     box-shadow: 0 0 10px white ;
-    background-color: rgb(151, 143, 143, 0.25);
+    background-color: rgb(151, 143, 143, 0.2);;
     resize: both;
     padding-left: 0px;
     padding-right: 0px;;
@@ -220,17 +225,30 @@ h3{
     position: relative;
     width: 12.5%;
 }
-
+/*
 footer{  
     position: fixed;
     bottom: 0;
     width: 100vw;
     background-color: rgb(151, 143, 143, 1.0);
     text-align: center;
-    padding-top: 50px;  
+    margin-top: 50px;  
     border-top: 2px solid white;
     box-shadow: 0 0 10px white ;
     left: 0px;
+}
+*/
+
+footer{  
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    text-align: center;
+    background-color: rgb(151, 143, 143, 1.0);
+    border-top: 2px solid white;
+    box-shadow: 0 0 10px white ;
 }
 
 #copyright{
@@ -241,10 +259,11 @@ footer{
 #copyrightText{
     font-size: 25px;
     letter-spacing: 1px;
+    padding:  15px;
 }
 
 
-a{
+#copyrightText > a{
     color: white;
     text-decoration: none;
     text-shadow: none;
@@ -299,6 +318,14 @@ a{
 */
     body{
         overflow: auto;
+    }
+
+    footer{  
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
     }
 }
 
@@ -405,6 +432,14 @@ a{
 
     #week-info{
         min-height: 200px;
+    }
+
+    footer{  
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
     }
 
 }
