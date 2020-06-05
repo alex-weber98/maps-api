@@ -141,11 +141,15 @@ h3{
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 0 8px white;
-    background-color: rgb(241, 125, 30, 0.85);
+    background-color: rgb(241, 125, 30, 0.5);
+    text-shadow: none;
+    color: white;
 }
 
+
+
 #locationInput:focus{
-    background-color: rgb(241, 125, 30, 1)
+    background-color: rgb(241, 125, 30, 1);
     outline-width: 0;
 }
 #locationInput:hover{
@@ -161,7 +165,7 @@ h3{
     padding-left: 0px;
     padding-right: 0px;;
     background-color: rgb(155, 155, 155, 0.8);
-    border: 4px solid rgb(241, 125, 30, 0.8);
+    border: 5px solid rgb(241, 125, 30, 0.6);
 
 }
 
