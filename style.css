@@ -84,20 +84,11 @@ main{
 }
 
 
-
 #map {
-
-
     min-width: 300px;
     grid-column: 1;
     grid-row: 2/4;
-    /*margin: 50px;*/
-    border-color: white 1px solid;
-    border-radius: 20px;
-    box-shadow: 0 0 10px white;
 }
-
-
 
 
 h1{
@@ -116,9 +107,13 @@ h3{
     font-size: 30px;
 }
 
-#info, .isResizable, #map{
+#info, .isResizable, #map, #locationInput{
     margin: 20px;
     padding: 50px;
+
+    border: solid white 1px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -138,16 +133,13 @@ h3{
 #locationInput{
     margin-top: 20px;
     margin-bottom: 10px;
-    background-color: rgb(255, 255, 255, 0.2);
-    border: 1px solid white;
-    border-radius: 20px;
     font-size: 35px;
     width: 350px;
     font-weight: bold;
     padding: 12px;
     text-align: center;
-    box-shadow: 0 0 10px white;
     transition: 0.3s;
+    box-shadow: 0 0 8px white;
 }
 
 #locationInput:focus{
@@ -162,10 +154,7 @@ h3{
     text-align: center;
     grid-column: 2;
     grid-row: 3;
-    border: solid white 1px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px white ;
-    background-color: rgb(151, 143, 143, 0.2);;
+
     resize: both;
     padding-left: 0px;
     padding-right: 0px;;
@@ -177,13 +166,9 @@ h3{
     grid-column: 3;
     grid-row: 2/4;
     text-align: center;
-    border: solid white 1px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px white ;
     background-color: rgba(255, 255, 255, 0.25);
     resize: both;
-    overflow: hidden;
-    
+    overflow: hidden;  
     display: flexbox;
 }
 
